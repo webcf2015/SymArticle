@@ -6,8 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    // pas de variables get pour l'accueil
+    public function indexAction()
     {
-        return $this->render('PersoArticleBundle:Default:index.html.twig', array('name' => $name));
+        // affichage de la vue twig sans variables
+        return $this->render('PersoArticleBundle:Default:index.html.twig');
     }
 }
