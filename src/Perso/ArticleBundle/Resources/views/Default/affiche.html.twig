@@ -1,0 +1,29 @@
+{# On appelle la vue par défaut se trouvant dans app/Resources/views/ #}
+{% extends "base.html.twig" %}
+
+{# changement balise title #}
+{% block title %}{{affiche.letitre}}{% endblock %}
+
+{# On va mettre du contenu dans notre body #}
+{% block body %}
+    <h1>{{affiche.letitre}}</h1>
+    
+    {# on inclu notre menu #}
+    {% include 'PersoArticleBundle:Default:menu.html.twig'%}
+    
+    <h2>Détail de l'article</h2>
+
+    <div id="conteneur">
+            
+            <h3>{{affiche.letitre}}</h3>
+            
+            {# on met les retours à la ligne #}
+            <p>{{affiche.letexte|nl2br}}
+            </p>
+            <h4>Par: {{affiche.lauteur}} - 
+                
+                {# formatage de la date selon nos besoins #}
+                Le {{affiche.ladate|date("d \\d\\u m Y \à H:i:s")}}</h4>
+
+    </div>
+{% endblock %}

@@ -1,3 +1,9 @@
 perso_article_homepage:
     path:     /
     defaults: { _controller: PersoArticleBundle:Default:index }
+    
+perso_article_affiche:
+    path:     /article/{id}
+    defaults: { _controller: PersoArticleBundle:Default:affiche }
+    requirements:
+        id:  \d+  # on dit que l'id doit être un digital

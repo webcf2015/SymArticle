@@ -1,12 +1,37 @@
 {# On appelle la vue par défaut se trouvant dans app/Resources/views/ #}
 {% extends "base.html.twig" %}
+
 {# changement balise title #}
 {% block title %}Tous nos articles{% endblock %}
+
 {# On va mettre du contenu dans notre body #}
 {% block body %}
     <h1>Tous nos articles</h1>
+    
     {# on inclu notre menu #}
     {% include 'PersoArticleBundle:Default:menu.html.twig'%}
+    
     <h2>Liste du résumé de nos articles</h2>
+
+    <div id="conteneur">
         
+        {# Tant que l'on a des articles dans "affiche", on va les afficher #}
+        {% for item in affiche%}
+            
+            <h3>{{item.letitre}}</h3>
+            
+            {# on prend que les 200 premiers caractères #}
+            <p>{{item.letexte|slice(0,200)}}...
+            {# affiche l'url qui a besoin d'une variable get en utilisant path('chemin',{variable:contenu}) #}    
+            <a href="{{ path('perso_article_affiche', {id:item.id}) }}">Lire plus</a>
+            </p>
+            <h4>Par: {{item.lauteur}} - 
+                
+                {# formatage de la date selon nos besoins #}
+                Le {{item.ladate|date("d \\d\\u m Y \à H:i:s")}}</h4>
+                
+                {# si on est pas au dernier tour on rajoute le hr #}
+                {% if loop.last == false %}<hr/>{% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}
