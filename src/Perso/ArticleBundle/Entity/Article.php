@@ -50,5 +50,110 @@ class Article
     private $lauteur;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set letitre
+     *
+     * @param string $letitre
+     *
+     * @return Article
+     */
+    public function setLetitre($letitre)
+    {
+        $this->letitre = $letitre;
+
+        return $this;
+    }
+
+    /**
+     * Get letitre
+     *
+     * @return string
+     */
+    public function getLetitre()
+    {
+        return $this->letitre;
+    }
+
+    /**
+     * Set letexte
+     *
+     * @param string $letexte
+     *
+     * @return Article
+     */
+    public function setLetexte($letexte)
+    {
+        $this->letexte = $letexte;
+
+        return $this;
+    }
+
+    /**
+     * Get letexte
+     *
+     * @return string
+     */
+    public function getLetexte()
+    {
+        return $this->letexte;
+    }
+
+    /**
+     * Set ladate
+     *
+     * @param \DateTime $ladate
+     *
+     * @return Article
+     */
+    public function setLadate($ladate)
+    {
+        $this->ladate = $ladate;
+
+        return $this;
+    }
+
+    /**
+     * Get ladate
+     *
+     * @return \DateTime
+     */
+    public function getLadate()
+    {
+        return $this->ladate;
+    }
+
+    /**
+     * Set lauteur
+     *
+     * @param string $lauteur
+     *
+     * @return Article
+     */
+    public function setLauteur($lauteur)
+    {
+        $this->lauteur = $lauteur;
+
+        return $this;
+    }
+
+    /**
+     * Get lauteur
+     *
+     * @return string
+     */
+    public function getLauteur()
+    {
+        return $this->lauteur;
+    }
+}
