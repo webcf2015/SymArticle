@@ -1,2 +1,12 @@
 {# On appelle la vue par défaut se trouvant dans app/Resources/views/ #}
 {% extends "base.html.twig" %}
+{# changement balise title #}
+{% block title %}Tous nos articles{% endblock %}
+{# On va mettre du contenu dans notre body #}
+{% block body %}
+    <h1>Tous nos articles</h1>
+    {# on inclu notre menu #}
+    {% include 'PersoArticleBundle:Default:menu.html.twig'%}
+    <h2>Liste du résumé de nos articles</h2>
+        
+{% endblock %}
